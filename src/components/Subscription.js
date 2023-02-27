@@ -51,7 +51,7 @@ export default class Subscription extends React.Component {
 
     const fetch = require("node-fetch");
 
-    let url = `https://api-uat.kushkipagos.com/subscriptions/v1/card/${this.state.subscriptionId}/authorize`;
+    let url = `subscriptions/v1/card/${this.state.subscriptionId}/authorize`;
 
     let options = {
       method: "POST",
@@ -84,7 +84,7 @@ export default class Subscription extends React.Component {
 
     const fetch = require("node-fetch");
 
-    let url = `https://api-uat.kushkipagos.com/subscriptions/v1/card/${this.state.subscriptionId}/capture`;
+    let url = `subscriptions/v1/card/${this.state.subscriptionId}/capture`;
 
     let options = {
       method: "POST",
@@ -117,7 +117,7 @@ export default class Subscription extends React.Component {
 
     const fetch = require("node-fetch");
 
-    let url = `https://api-uat.kushkipagos.com/subscriptions/v1/card/search/${this.state.subscriptionId}`;
+    let url = `subscriptions/v1/card/search/${this.state.subscriptionId}`;
 
     let options = {
       method: "GET",
@@ -144,7 +144,7 @@ export default class Subscription extends React.Component {
 
     const fetch = require("node-fetch");
 
-    let url = `https://api-uat.kushkipagos.com/v1/charges/${this.state.capture.ticketId}`;
+    let url = `v1/charges/${this.state.capture.ticketId}`;
 
     let options = {
       method: "DELETE",
@@ -177,7 +177,8 @@ export default class Subscription extends React.Component {
 
     const fetch = require("node-fetch");
 
-    let url = "https://api-uat.kushkipagos.com/analytics/v1/transactions-list?from=2023-02-26T00:00:00.000&to=2023-02-27T00:00:00.000";
+    let url =
+      "analytics/v1/transactions-list?from=2023-02-26T00:00:00.000&to=2023-02-27T00:00:00.000";
 
     let options = {
       method: "GET",
@@ -190,11 +191,11 @@ export default class Subscription extends React.Component {
     fetch(url, options)
       .then((res) => res.json())
       .then((json) => {
-		console.log("Transactions List GET Information:");
+        console.log("Transactions List GET Information:");
         console.log(json);
-		this.setState({
-			transactionsList: json,
-		  });
+        this.setState({
+          transactionsList: json,
+        });
       })
       .catch((err) => console.error("error:" + err));
   };
@@ -213,7 +214,7 @@ export default class Subscription extends React.Component {
     if (this.state.isTokenCreated) {
       const fetch = require("node-fetch");
 
-      let url = "https://api-uat.kushkipagos.com/subscriptions/v1/card";
+      let url = "subscriptions/v1/card";
 
       let options = {
         method: "POST",

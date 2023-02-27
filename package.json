@@ -2,6 +2,7 @@
   "name": "kushki-carlos-shop",
   "version": "0.1.0",
   "private": true,
+  "proxy":"https://api-uat.kushkipagos.com/",
   "dependencies": {
     "@kushki/js": "^1.33.1",
     "@mdi/js": "^7.1.96",
@@ -9,6 +10,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
+    "cors": "^2.8.5",
     "md5": "^2.2.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
