@@ -262,6 +262,7 @@ export default class Subscription extends React.Component {
                 type="button"
                 value="Autorizar pago"
                 onClick={this.handleInputAuthorizePayment}
+                className={"btn btn-color"}
               />
               <br />
               <h4>Respuesta Autorización:</h4>
@@ -294,6 +295,7 @@ export default class Subscription extends React.Component {
                 type="button"
                 value="Capturar pago"
                 onClick={this.handleInputCapturePayment}
+                className={"btn btn-color"}
               />
               <br />
               <h4>Respuesta Captura:</h4>
@@ -322,16 +324,23 @@ export default class Subscription extends React.Component {
                 type="button"
                 value="Obtener Información de la suscripción"
                 onClick={this.handleInputSubscriptionInfo}
+                className={"btn btn-color"}
               />
               <br />
               <h4>Información de la suscripción:</h4>
-              <textarea>{JSON.stringify(this.state.subscriptionInfo)}</textarea>
+              <textarea
+                class="form-control"
+                id="textAreaExample2"
+                rows="8"
+                value={JSON.stringify(this.state.subscriptionInfo)}
+              ></textarea>
               <br />
               <br />
               <input
                 type="button"
                 value="Anular pago"
                 onClick={this.handleInputVoidPayment}
+                className={"btn btn-color"}
               />
               <br />
               <h4>Respuesta Anulación:</h4>
@@ -356,10 +365,16 @@ export default class Subscription extends React.Component {
                 type="button"
                 value="Obtener Lista de Transacciones"
                 onClick={this.handleInputTransactionsList}
+                className={"btn btn-color"}
               />
               <br />
               <h4>Información de la suscripción:</h4>
-              <textarea>{JSON.stringify(this.state.transactionsList)}</textarea>
+              <textarea
+                class="form-control"
+                id="textAreaExample2"
+                rows="8"
+                value={JSON.stringify(this.state.transactionsList)}
+              ></textarea>
             </div>
             <div className={"col-md-2"} />
           </div>
