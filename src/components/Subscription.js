@@ -201,16 +201,18 @@ export default class Subscription extends React.Component {
   };
 
   render() {
-    const currentDate = new Date();
-    const year = currentDate.getFullYear();
-    const month = currentDate.getMonth();
-    const day = currentDate.getDate();
+    let currentDate = new Date();
+    let year = currentDate.getFullYear();
+    let month = currentDate.getMonth() + 1;
+    let day = currentDate.getDate();
     var subscriptionStartDate = "";
-    if (month.toString().length < 2) {
-      subscriptionStartDate = `${year}-0${month}-${day}`;
-    } else {
-      subscriptionStartDate = `${year}-${month}-${day}`;
+    if (day.toString().length < 2) {
+      day = `0${day}`;
     }
+    if (month.toString().length < 2) {
+      month = `0${month}`;
+    }
+    subscriptionStartDate = `${year}-${month}-${day}`;
     if (this.state.isTokenCreated) {
       const fetch = require("node-fetch");
 
